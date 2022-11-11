@@ -9,9 +9,14 @@ const [pokemons, setAllPokemons] = useState([])
 
   useEffect(() => {
     const fetchPokemon = async() => {
-      const { data } = await axios.get(`https://api.pokemontcg.io/v2/cards?page=1&pageSize=1`)
+      const data = await axios.get(`https://api.pokemontcg.io/v2/cards?page=1&pageSize=1`)
 
+      console.log(data)
+      
       setAllPokemons(data)
+
+      console.log(pokemons)
+
     }
 
     fetchPokemon()
